@@ -5,6 +5,9 @@ ehthumbs.db
 # Folder config file
 Desktop.ini
 
+#Visual Studio
+.vs
+
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
@@ -49,5 +52,6 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-#Unity TEMP directories
+#Unity directories
 .Temp
+.Library
