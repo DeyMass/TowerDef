@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.EventSystems;
 
-public class ShootTheEnemy : MonoBehaviour {
+public class DrawRange : MonoBehaviour {
     //public Material mat;
     GameObject sphere;
     Transform self;
@@ -20,14 +20,15 @@ public class ShootTheEnemy : MonoBehaviour {
         MouseOn = false;
     }
     
+
     MeshRenderer VisibleSphere;
     void Start()
     {
         self = GetComponent<Transform>();
         sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+
         VisibleSphere = sphere.GetComponent<MeshRenderer>();
         Shader shader = Shader.Find("Transparent/Diffuse");
-
         VisibleSphere.material.shader = shader;
         
         sphere.transform.SetParent(self);
@@ -41,15 +42,15 @@ public class ShootTheEnemy : MonoBehaviour {
     {
         if (MouseOn)
             if (i < 1)
-                i = i + 0.05f;
+                i = i + 0.07f;
+
         if (!MouseOn)
         {
             if (i > 0)
-                i = i - 0.05f;
+                i = i - 0.07f;
             else
                 sphere.SetActive(false);
         }
-        print(i);
         if (VisibleSphere != null)
             VisibleSphere.material.color = new Color(0, 0, 0, i);
     }
