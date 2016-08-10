@@ -10,15 +10,37 @@ Desktop.ini
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
-Temp/*
-Library/*
-.vs/*
 
 # Windows Installer files
 *.cab
 *.msi
 *.msm
 *.msp
+
+Temp/
+Library/
+.vs/
+
+# =============== #
+# Unity generated #
+# =============== #
+Temp/
+Library/
+
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+ExportedObj/
+obj/
+*.svd
+*.userprefs
+/*.csproj
+*.pidb
+*.suo
+/*.sln
+*.user
+*.unityproj
+*.booproj
 
 #Unity meta files
 *.meta
