@@ -36,7 +36,9 @@ public class Enemy : MonoBehaviour
     public float Health = 100;
     void Start()
     {
-        gameObject.AddComponent<Rigidbody2D>().gravityScale = 0;
+        //gameObject.AddComponent<Rigidbody2D>().gravityScale = 0;
+		gameObject.GetComponent<Collider2D> ().isTrigger = true;
+
         GameObject HealthBar = GameObject.CreatePrimitive(PrimitiveType.Quad);
         HealthBar.transform.SetParent(gameObject.transform);
         HealthBar.transform.position = 
@@ -46,28 +48,12 @@ public class Enemy : MonoBehaviour
         HealthBarColor = HealthBar.GetComponent<MeshRenderer>();
         
     }
-
-    void OnTriggerStay2D(Collider2D col)
+		
+	void Update()
     {
-        Health -= 1f;
-        print(Health);
-        //if (other.name == "Sphere")
-        //print(Health);
-
-    }
-
-    float a = 0.0f;
-    void Update()
-    {
-        //print("Red Color: " + (1 - Health / 100));
-        //print("Green Color: " + ( Health / 100));
-
         if (Mathf.Round(Health) == 0)
             Destroy(gameObject);
         if (HealthBarColor != null)
-            HealthBarColor.material.color = new Color((6 - (6 * Health) / 100), (6 * Health) / 100, 0);
-        
-                                    //new Color(1f - (Health / 100f), Health / 100f, 0);
-        //EMPTY
+			HealthBarColor.material.color = new Color((6 - (6 * Health) / 100), (6 * Health) / 100, 0);
     }
 }

@@ -6,7 +6,8 @@ ehthumbs.db
 Desktop.ini
 
 #Visual Studio
-.vs
+.vs/
+*.csproj
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/

@@ -8,17 +8,19 @@ public class interfaceUsing : MonoBehaviour {
 
     void OnMouseDown()
     {
-        ShowRange = Instantiate(obj);
-
+		ShowRange = Instantiate(obj);
+		ShowRange.GetComponent<DrawRange>().enabled = false;
+		//ShowRange.GetComponent<DrawRange> ().enabled = true;
+		ShowRange.GetComponent<DrawRange>().sphere = ShowRange;
         Sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        ShowRange.GetComponent<DrawRange>().enabled = false;
+        
         Sphere.transform.SetParent(ShowRange.transform);
         Sphere.transform.localScale = new Vector3(10, 10);
 
     }
     void OnMouseUp() {
         ShowRange.GetComponent<DrawRange>().enabled = true;
-        Destroy(Sphere);
+        //Destroy(Sphere);
     }
 	// Update is called once per frame
 	void Update () {

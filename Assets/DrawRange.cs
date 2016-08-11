@@ -35,18 +35,24 @@ public class DrawRange : MonoBehaviour {
         Destroy(sphere.GetComponent<Collider>());
         Destroy(sphere.GetComponent<SphereCollider>());
         Destroy(sphere.GetComponent<CircleCollider2D>());
-        
+
+
+		sphere.AddComponent<AttachTosSphere> ();
+
+
         Debug.Log(sphere.GetComponent<SphereCollider>());
-        
+		   
         
     }
     bool firstframe = true;
     void Update ()
     {
         if (firstframe)
-        {
-            firstframe = false;
-            sphere.AddComponent<CircleCollider2D>().isTrigger = true;
+		{
+			sphere.AddComponent<CircleCollider2D> ();
+			sphere.AddComponent<Rigidbody2D> ().gravityScale = 0;
+			sphere.GetComponent<Rigidbody2D> ().isKinematic = true;
+			firstframe = false;
         }
         if (MouseOn)
             if (i < 1)
