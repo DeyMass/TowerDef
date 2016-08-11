@@ -17,8 +17,8 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 
-Temp/
-Library/
+Temp/*
+Library/*
 .vs/
 
 # =============== #

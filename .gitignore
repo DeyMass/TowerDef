@@ -10,8 +10,8 @@ Desktop.ini
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
-Temp/
-Library/
+Temp/*
+Library/*
 .vs/*
 
 # =============== #

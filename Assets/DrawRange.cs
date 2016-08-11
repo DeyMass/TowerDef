@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 public class DrawRange : MonoBehaviour {
     //public Material mat;
-    GameObject sphere;
+    public GameObject sphere = null;
     Transform self;
     float i = 0.0f;
     bool MouseOn;
@@ -12,7 +12,6 @@ public class DrawRange : MonoBehaviour {
     void OnMouseOver()
     {
         MouseOn = true;
-        sphere.SetActive(true);
     }
 
     void OnMouseExit()
@@ -26,7 +25,6 @@ public class DrawRange : MonoBehaviour {
     {
         self = GetComponent<Transform>();
         sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-
         VisibleSphere = sphere.GetComponent<MeshRenderer>();
         Shader shader = Shader.Find("Transparent/Diffuse");
         VisibleSphere.material.shader = shader;
@@ -34,12 +32,22 @@ public class DrawRange : MonoBehaviour {
         sphere.transform.SetParent(self);
         sphere.transform.position = new Vector3(self.transform.position.x, self.transform.position.y, self.transform.position.z + 1);
         sphere.transform.localScale = new Vector3(20, 20, 0);
+        Destroy(sphere.GetComponent<Collider>());
+        Destroy(sphere.GetComponent<SphereCollider>());
+        Destroy(sphere.GetComponent<CircleCollider2D>());
         
-        sphere.SetActive(false);
+        Debug.Log(sphere.GetComponent<SphereCollider>());
+        
+        
     }
-
+    bool firstframe = true;
     void Update ()
     {
+        if (firstframe)
+        {
+            firstframe = false;
+            sphere.AddComponent<CircleCollider2D>().isTrigger = true;
+        }
         if (MouseOn)
             if (i < 1)
                 i = i + 0.07f;
@@ -48,8 +56,6 @@ public class DrawRange : MonoBehaviour {
         {
             if (i > 0)
                 i = i - 0.07f;
-            else
-                sphere.SetActive(false);
         }
         if (VisibleSphere != null)
             VisibleSphere.material.color = new Color(0, 0, 0, i);

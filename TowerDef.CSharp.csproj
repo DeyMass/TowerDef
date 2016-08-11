@@ -73,6 +73,7 @@
     <Compile Include="Assets\Enemy.cs" />
     <Compile Include="Assets\OwnDragAndDrop.cs" />
     <Compile Include="Assets\SnapToGrid.cs" />
+    <Compile Include="Assets\TempWalking.cs" />
     <Compile Include="Assets\interfaceUsing.cs" />
     <Compile Include="Assets\overlay.cs" />
   </ItemGroup>
