@@ -51,7 +51,7 @@ public class Enemy : MonoBehaviour
 		
 	void Update()
     {
-        if (Mathf.Round(Health) == 0)
+        if (Mathf.Round(Health) <= 0)
             Destroy(gameObject);
         if (HealthBarColor != null)
 			HealthBarColor.material.color = new Color((6 - (6 * Health) / 100), (6 * Health) / 100, 0);

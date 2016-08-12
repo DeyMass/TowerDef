@@ -6,8 +6,8 @@ public class DrawRange : MonoBehaviour {
     //public Material mat;
     public GameObject sphere = null;
     Transform self;
-    float i = 0.0f;
-    bool MouseOn;
+    public float alpha = 0.0f;
+    bool MouseOn = false;
 
     void OnMouseOver()
     {
@@ -23,47 +23,48 @@ public class DrawRange : MonoBehaviour {
     MeshRenderer VisibleSphere;
     void Start()
     {
-        self = GetComponent<Transform>();
-        sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        VisibleSphere = sphere.GetComponent<MeshRenderer>();
-        Shader shader = Shader.Find("Transparent/Diffuse");
-        VisibleSphere.material.shader = shader;
-        
-        sphere.transform.SetParent(self);
-        sphere.transform.position = new Vector3(self.transform.position.x, self.transform.position.y, self.transform.position.z + 1);
-        sphere.transform.localScale = new Vector3(20, 20, 0);
-        Destroy(sphere.GetComponent<Collider>());
-        Destroy(sphere.GetComponent<SphereCollider>());
-        Destroy(sphere.GetComponent<CircleCollider2D>());
+        self = gameObject.GetComponent<Transform>();
+		sphere = gameObject.transform.GetChild(0).gameObject;
 
+        VisibleSphere = sphere.GetComponent<MeshRenderer>();
+		Shader shader = Shader.Find("Transparent/Diffuse");
+        VisibleSphere.material.shader = shader;
+		sphere.transform.SetParent (self);
+        sphere.transform.position = new Vector3(self.transform.position.x, 
+												self.transform.position.y, 
+												self.transform.position.z + 1);
+        sphere.transform.localScale = new Vector3(20, 20, 0);
+		Destroy (sphere.GetComponent<SphereCollider> ());
+		//Destroy (self.GetChild (1).gameObject);
+		gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
 
 		sphere.AddComponent<AttachTosSphere> ();
-
-
-        Debug.Log(sphere.GetComponent<SphereCollider>());
-		   
-        
+//		sphere.AddComponent<Rigidbody2D> ();
     }
-    bool firstframe = true;
+	int nframe = 0;
     void Update ()
     {
-        if (firstframe)
-		{
+		nframe++;
+		if (nframe == 2) {
+			if (sphere.GetComponent<CircleCollider2D>() == null)
 			sphere.AddComponent<CircleCollider2D> ();
-			sphere.AddComponent<Rigidbody2D> ().gravityScale = 0;
-			sphere.GetComponent<Rigidbody2D> ().isKinematic = true;
-			firstframe = false;
-        }
-        if (MouseOn)
-            if (i < 1)
-                i = i + 0.07f;
+			if (sphere.GetComponent<Rigidbody2D>() == null)
+				sphere.AddComponent<Rigidbody2D> ();
+			sphere.GetComponent<Rigidbody2D>().gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
 
+			sphere.GetComponent<Rigidbody2D> ().isKinematic = true;
+		}
+
+		if (MouseOn) {
+			if (alpha < 1)
+				alpha = alpha + 0.07f;
+		}
         if (!MouseOn)
         {
-            if (i > 0)
-                i = i - 0.07f;
+            if (alpha > 0)
+                alpha = alpha - 0.07f;
         }
-        if (VisibleSphere != null)
-            VisibleSphere.material.color = new Color(0, 0, 0, i);
+		if (VisibleSphere != null)
+            VisibleSphere.material.color = new Color(0, 0, 0, alpha);
     }
 }
