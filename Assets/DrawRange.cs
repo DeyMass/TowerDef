@@ -18,11 +18,11 @@ public class DrawRange : MonoBehaviour {
     {
         MouseOn = false;
     }
-    
 
     MeshRenderer VisibleSphere;
     void Start()
-    {
+	{
+
         self = gameObject.GetComponent<Transform>();
 		sphere = gameObject.transform.GetChild(0).gameObject;
 

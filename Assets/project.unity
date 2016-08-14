@@ -97,6 +97,7 @@ GameObject:
   - 114: {fileID: 197808077}
   - 114: {fileID: 197808076}
   - 61: {fileID: 197808075}
+  - 114: {fileID: 197808080}
   m_Layer: 0
   m_Name: enemy (1)
   m_TagString: Enemy
@@ -191,6 +192,18 @@ RectTransform:
   m_AnchoredPosition: {x: 29.5, y: 26.9}
   m_SizeDelta: {x: 5.12, y: 5.12}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &197808080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 197808074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5da1208082c1a3541a915d918b3d1a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SelfType: 5
 --- !u!1001 &473082901
 Prefab:
   m_ObjectHideFlags: 0
@@ -258,6 +271,7 @@ GameObject:
   - 114: {fileID: 595282792}
   - 114: {fileID: 595282796}
   - 61: {fileID: 595282795}
+  - 114: {fileID: 595282797}
   m_Layer: 0
   m_Name: enemy
   m_TagString: Enemy
@@ -347,6 +361,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afd90e9407399aa4abd81dbc62d16ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &595282797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 595282791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5da1208082c1a3541a915d918b3d1a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SelfType: 5
 --- !u!1 &697267710
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,6 +543,7 @@ GameObject:
   - 114: {fileID: 1146362976}
   - 114: {fileID: 1146362975}
   - 61: {fileID: 1146362974}
+  - 114: {fileID: 1146362979}
   m_Layer: 0
   m_Name: enemy (2)
   m_TagString: Enemy
@@ -606,6 +633,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
+--- !u!114 &1146362979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1146362973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5da1208082c1a3541a915d918b3d1a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SelfType: 5
 --- !u!1 &1390679759
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,9 +658,10 @@ GameObject:
   - 61: {fileID: 1390679761}
   - 114: {fileID: 1390679764}
   - 114: {fileID: 1390679765}
+  - 114: {fileID: 1390679766}
   m_Layer: 0
   m_Name: Tower (TrueTower)
-  m_TagString: Tower
+  m_TagString: Fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -708,6 +748,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sphere: {fileID: 0}
+  alpha: 0
 --- !u!114 &1390679765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -719,6 +760,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3146c726e165024790bdf51a3a1ce5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1390679766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1390679759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5da1208082c1a3541a915d918b3d1a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SelfType: 0
 --- !u!1 &1709279112
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,7 +786,7 @@ GameObject:
   - 114: {fileID: 1709279117}
   m_Layer: 0
   m_Name: Tower (Interface)
-  m_TagString: Tower
+  m_TagString: Fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -828,7 +881,7 @@ GameObject:
   - 4: {fileID: 1759610109}
   - 114: {fileID: 1759610108}
   m_Layer: 0
-  m_Name: Overlay?
+  m_Name: Items
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -8,6 +8,11 @@ TagManager:
   - Land
   - WayToWalk
   - Tower
+  - Fire
+  - Water
+  - Wind
+  - Earth
+  - New Tag
   layers:
   - Default
   - TransparentFX

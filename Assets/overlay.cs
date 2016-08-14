@@ -1,18 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class overlay : MonoBehaviour {
 
-	void Start () {
+public static class overlay {
 	
-	}
-	
-	void Update () {
-	
-	}
 
-    void OnGUI()
-    {
-
-    }
 }
