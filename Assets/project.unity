@@ -95,9 +95,9 @@ GameObject:
   - 224: {fileID: 197808079}
   - 212: {fileID: 197808078}
   - 114: {fileID: 197808077}
-  - 114: {fileID: 197808076}
   - 61: {fileID: 197808075}
   - 114: {fileID: 197808080}
+  - 114: {fileID: 197808076}
   m_Layer: 0
   m_Name: enemy (1)
   m_TagString: Enemy
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 197808074}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afd90e9407399aa4abd81dbc62d16ceb, type: 3}
+  m_Script: {fileID: 11500000, guid: 3fbf155d6f3f27c4f9065ddd54ef580a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &197808077
@@ -200,7 +200,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 197808074}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5da1208082c1a3541a915d918b3d1a50, type: 3}
+  m_Script: {fileID: 11500000, guid: f7c2fa6915cf62a4487b720459993c9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SelfType: 5
@@ -269,9 +269,9 @@ GameObject:
   - 4: {fileID: 595282794}
   - 212: {fileID: 595282793}
   - 114: {fileID: 595282792}
-  - 114: {fileID: 595282796}
   - 61: {fileID: 595282795}
   - 114: {fileID: 595282797}
+  - 114: {fileID: 595282796}
   m_Layer: 0
   m_Name: enemy
   m_TagString: Enemy
@@ -358,7 +358,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 595282791}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afd90e9407399aa4abd81dbc62d16ceb, type: 3}
+  m_Script: {fileID: 11500000, guid: 3fbf155d6f3f27c4f9065ddd54ef580a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &595282797
@@ -369,10 +369,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 595282791}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5da1208082c1a3541a915d918b3d1a50, type: 3}
+  m_Script: {fileID: 11500000, guid: f7c2fa6915cf62a4487b720459993c9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelfType: 5
+  SelfType: 0
 --- !u!1 &697267710
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,9 +541,9 @@ GameObject:
   - 4: {fileID: 1146362978}
   - 212: {fileID: 1146362977}
   - 114: {fileID: 1146362976}
-  - 114: {fileID: 1146362975}
   - 61: {fileID: 1146362974}
   - 114: {fileID: 1146362979}
+  - 114: {fileID: 1146362975}
   m_Layer: 0
   m_Name: enemy (2)
   m_TagString: Enemy
@@ -573,7 +573,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1146362973}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afd90e9407399aa4abd81dbc62d16ceb, type: 3}
+  m_Script: {fileID: 11500000, guid: 3fbf155d6f3f27c4f9065ddd54ef580a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1146362976
@@ -641,7 +641,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1146362973}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5da1208082c1a3541a915d918b3d1a50, type: 3}
+  m_Script: {fileID: 11500000, guid: f7c2fa6915cf62a4487b720459993c9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SelfType: 5
@@ -768,10 +768,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1390679759}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5da1208082c1a3541a915d918b3d1a50, type: 3}
+  m_Script: {fileID: 11500000, guid: f7c2fa6915cf62a4487b720459993c9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelfType: 0
+  SelfType: 5
 --- !u!1 &1709279112
 GameObject:
   m_ObjectHideFlags: 0

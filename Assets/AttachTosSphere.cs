@@ -9,7 +9,7 @@ public class AttachTosSphere : MonoBehaviour {
 		//print ("+");
 		if (!isDragged) {
 			GameObject Attack = GameObject.Find (col.name);
-			DealDamage.ApplyDamage (Attack, 1F);
+            DealDamage.ApplyDamage(Attack, 1F, gameObject.GetComponent<DamageType>().SelfType);
 			//DealDamage.ReduceDamage (Attack);
 		}
 	}
