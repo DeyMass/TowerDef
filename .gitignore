@@ -53,8 +53,6 @@ Thumbs.db
 *.msm
 *.msp
 
-#Unity meta files
-*.meta
 
 # Windows shortcuts
 *.lnk
