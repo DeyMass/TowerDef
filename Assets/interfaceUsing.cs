@@ -27,7 +27,7 @@ public class interfaceUsing : MonoBehaviour {
     }
     void OnMouseUp() {
 		obj.GetComponent<DrawRange>().enabled = true;
-		Sphere.GetComponent<AttachTosSphere> ().isDragged = false;
+		//Sphere.GetComponent<AttachTosSphere> ().isDragged = false;
         //Destroy(Sphere);
     }
 	// Update is called once per frame

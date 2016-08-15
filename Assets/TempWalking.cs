@@ -15,7 +15,12 @@ public class TempWalking : MonoBehaviour
 
     void Update()
     {
-		
+        Transform transf = GetComponent<Transform>();
+
+        transf.position += new Vector3(1, 0, 0);
+        if (Mathf.Round(transf.position.x) == 60)
+            transf.position -= new Vector3(30, 0);
+
     }
 }
 

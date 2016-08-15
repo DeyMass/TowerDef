@@ -6,10 +6,10 @@ public class AttachTosSphere : MonoBehaviour {
 	public bool isDragged;
 
 	void OnTriggerStay2D(Collider2D col){
-		//print ("+");
-		if (!isDragged) {
+        print(gameObject.transform.parent.GetComponent<DamageType>().SelfType);
+        if (!isDragged) {
 			GameObject Attack = GameObject.Find (col.name);
-            DealDamage.ApplyDamage(Attack, 1F, gameObject.GetComponent<DamageType>().SelfType);
+            DealDamage.ApplyDamage(Attack, 1F, gameObject.transform.parent.GetComponent<DamageType>().SelfType);
 			//DealDamage.ReduceDamage (Attack);
 		}
 	}
