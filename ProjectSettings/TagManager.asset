@@ -13,6 +13,7 @@ TagManager:
   - Wind
   - Earth
   - New Tag
+  - wall
   layers:
   - Default
   - TransparentFX
@@ -22,11 +23,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Wall
+  - Tower
+  - TowerRadius
+  - LevelConstructionLayer
   - 
   - 
   - 
