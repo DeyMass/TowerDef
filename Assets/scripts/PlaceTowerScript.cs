@@ -7,8 +7,8 @@ public class PlaceTowerScript : MonoBehaviour {
     private float castDistance = 50f;
 	void Start () {
         this.GetComponent<towerRadiusHandler>().enabled = false;
-        transform.Find("RealRadius").gameObject.SetActive(false);//.GetComponent<MeshRenderer>().enabled = false;
-        //transform.GetComponentsInChildren<ParticleEmitter>();
+        transform.Find("RealRadius").gameObject.SetActive(false);
+        transform.Find("tower/Sphere/Effect").gameObject.SetActive(false);
     }
 	
 	// Update is called once per frame
@@ -35,15 +35,21 @@ public class PlaceTowerScript : MonoBehaviour {
             Physics.Raycast(ray3, out hit3, castDistance);
             Physics.Raycast(ray4, out hit4, castDistance);
 
-
-
+            RaycastHit rayCheck;
+            Physics.BoxCast(transform.position, new Vector3(1, 1, 1), Vector3.up, out rayCheck);
+            if (rayCheck.transform)
+            {
+                if (rayCheck.transform.gameObject.tag == "Tower")
+                    print("OPPPA");
+            }
             if (hit1.transform != null && hit2.transform != null && hit3.transform != null && hit4.transform != null)
             {
                 GetComponent<MyDragAndDrop>().enabled = false;
                 GetComponent<PlaceTowerScript>().enabled = false;
                 GetComponent<towerRadiusHandler>().enabled = true;
 
-                //transform.Find("Particle System").gameObject.SetActive(true);
+                
+                transform.Find("tower/Sphere/Effect").gameObject.SetActive(true);
 
                 transform.Find("RealRadius").gameObject.SetActive(true);
                 transform.Find("RealRadius").gameObject.GetComponent<MeshRenderer>().enabled = true;

@@ -13,8 +13,10 @@ public class MyInterfaceHandler : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.Keypad1)){
-            Instantiate<GameObject>(srcTower);
+		if (Input.GetKeyDown(KeyCode.N)){
+            GameObject copy = Instantiate<GameObject>(srcTower);
+            copy.GetComponent<PlaceTowerScript>().enabled = true;
+            copy.GetComponent<MyDragAndDrop>().enabled = true;
         }
 	}
 }
