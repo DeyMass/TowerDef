@@ -12,17 +12,13 @@ public class towerRadiusHandler : MonoBehaviour {
 
 	void OnMouseOver()
     {
-        if(render != null)
+        if(render)
             render.enabled = true;
     }
 
     void OnMouseExit()
     {
-        render.enabled = false;
+        if (render)
+            render.enabled = false;
     }
-
-	// Update is called once per frame
-	void Update () {
-
-	}
 }

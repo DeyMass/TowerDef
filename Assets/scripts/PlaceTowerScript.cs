@@ -5,16 +5,30 @@ using UnityEngine;
 public class PlaceTowerScript : MonoBehaviour {
     public Camera cam;
     private float castDistance = 50f;
+    private bool isLegal;
+
 	void Start () {
+        isLegal = true;
         this.GetComponent<towerRadiusHandler>().enabled = false;
         transform.Find("RealRadius").gameObject.SetActive(false);
         transform.Find("tower/Sphere/Effect").gameObject.SetActive(false);
     }
 	
+    void OnTriggerEnter(Collider col)
+    {
+        isLegal = false;
+    }
+
+    void OnTriggerExit(Collider col)
+    {
+        isLegal = true; 
+    }
+
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetMouseButtonDown(0))
         {
+            if (!isLegal) return;
             Vector3 center = transform.position;
             Vector3 rT, lT, rB, lB;
             rT = center + new Vector3(2.5f, 0, 2.5f);
@@ -34,20 +48,13 @@ public class PlaceTowerScript : MonoBehaviour {
             Physics.Raycast(ray2, out hit2, castDistance);
             Physics.Raycast(ray3, out hit3, castDistance);
             Physics.Raycast(ray4, out hit4, castDistance);
-
-            RaycastHit rayCheck;
-            Physics.BoxCast(transform.position, new Vector3(1, 1, 1), Vector3.up, out rayCheck);
-            if (rayCheck.transform)
-            {
-                if (rayCheck.transform.gameObject.tag == "Tower")
-                    print("OPPPA");
-            }
+            
             if (hit1.transform != null && hit2.transform != null && hit3.transform != null && hit4.transform != null)
             {
+                FindObjectOfType<MyInterfaceHandler>().placeSuccess();
                 GetComponent<MyDragAndDrop>().enabled = false;
                 GetComponent<PlaceTowerScript>().enabled = false;
                 GetComponent<towerRadiusHandler>().enabled = true;
-
                 
                 transform.Find("tower/Sphere/Effect").gameObject.SetActive(true);
 

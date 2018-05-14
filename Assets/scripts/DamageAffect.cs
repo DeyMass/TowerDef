@@ -21,6 +21,7 @@ public class DamageAffect : MonoBehaviour {
     void OnTriggerStay(Collider other)
     {
         GameObject collided = other.gameObject;
+        if (collided.layer >= 10) return;
         collided.GetComponent<HealthHandle>().deal_damage(damageAmount);
     }
 }
